@@ -1,7 +1,7 @@
 """
 user:石文斌
 time：2021/11/15
-
+equipment：IGS50S
 """
 import os
 import time
