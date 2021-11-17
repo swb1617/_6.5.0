@@ -63,7 +63,7 @@ class test_DATA(unittest.TestCase):
                 self.driver.save_screenshot('error.png')
                 time.sleep(1)
                 for k in range(4):
-                    self.driver.find_element_by_id("android:id/button1").click()  # retry 按钮
+                    self.driver.find_element_by_id("android:id/button1").click()  # retry操作
                     time.sleep(35)  # 上传时间
                     self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
                     if k == 4:
