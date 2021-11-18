@@ -26,7 +26,7 @@ class test_DATA(unittest.TestCase):
 
         desired_caps = {
             'platformName': 'Android',
-            'platformVersion': '9',
+            'platformVersion': '11',
             'deviceName': 'test01',
             'appPackage': 'com.igpsport.globalapp',
             'appActivity': 'com.igpsport.globalapp.activity.v3.SplashActivity',
@@ -66,7 +66,7 @@ class test_DATA(unittest.TestCase):
                     self.driver.find_element_by_id("android:id/button1").click()  # retry操作
                     time.sleep(35)  # 上传时间
                     self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
-                    print('重试', k, ' 次')
+                    print('重试', k+1, '次')
                     if k == 4:
                         print("重试失败")
         except:
