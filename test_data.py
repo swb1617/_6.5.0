@@ -91,9 +91,6 @@ class test_DATA(unittest.TestCase):
 
         except:
             pass
-        time.sleep(8)
-        self.swipe_down()
-        time.sleep(3)
 
     def test_data(self):
         global i
@@ -110,6 +107,9 @@ class test_DATA(unittest.TestCase):
                 self.data_up()
                 time.sleep(3)
                 print(f"第", i + 1, "次 OK")
+                time.sleep(5)
+                self.swipe_down()
+                time.sleep(3)
         except:
             self.driver.save_screenshot('data_error.png')
             print(f"第", i + 1, "次 ERROR")
