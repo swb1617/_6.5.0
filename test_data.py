@@ -107,7 +107,7 @@ class test_DATA(unittest.TestCase):
                 self.data_up()
                 time.sleep(3)
                 print(f"第", i + 1, "次 OK")
-                time.sleep(5)
+                time.sleep(10)
                 self.swipe_down()
                 time.sleep(5)
         except:
