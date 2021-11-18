@@ -26,14 +26,14 @@ class test_DATA(unittest.TestCase):
 
         desired_caps = {
             'platformName': 'Android',
-            'platformVersion': '11',
+            'platformVersion': '9',
             'deviceName': 'test01',
             'appPackage': 'com.igpsport.globalapp',
             'appActivity': 'com.igpsport.globalapp.activity.v3.SplashActivity',
             'noReset': True,
             'newCommandTimeout': 6000,
             # 更换底层驱动
-            'automationName': 'UiAutomator2',
+            # 'automationName': 'UiAutomator2',
             'unicodeKeyboard': True,  # 修改手机的输入法
             'resetKeyboard': True
         }
@@ -59,16 +59,16 @@ class test_DATA(unittest.TestCase):
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
         try:
             message = self.driver.find_element_by_id("android:id/message").text
-            if message:
-                self.driver.save_screenshot('error.png')
-                time.sleep(1)
-                for k in range(4):
+            time.sleep(1)
+            for k in range(4):
+                if message:
+                    self.driver.save_screenshot('error.png')
                     self.driver.find_element_by_id("android:id/button1").click()  # retry操作
                     time.sleep(35)  # 上传时间
                     self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
                     print('重试', k+1, '次')
-                    if k == 4:
-                        print("重试失败")
+                else:
+                    break
         except:
             pass
         time.sleep(2)
@@ -78,6 +78,7 @@ class test_DATA(unittest.TestCase):
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tvDelete").click()
         time.sleep(5)
         self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
+        time.sleep(3)
         try:
             id_name = self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").text
             if not id_name:
