@@ -55,7 +55,7 @@ class test_DATA(unittest.TestCase):
 
     def data_up(self):
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
-        time.sleep(35)  # 上传时间
+        time.sleep(40)  # 上传时间
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
         try:
             message = self.driver.find_element_by_id("android:id/message").text
@@ -64,7 +64,7 @@ class test_DATA(unittest.TestCase):
                 if message:
                     self.driver.save_screenshot('error.png')
                     self.driver.find_element_by_id("android:id/button1").click()  # retry操作
-                    time.sleep(35)  # 上传时间
+                    time.sleep(40)  # 上传时间
                     self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
                     print('重试', k+1, '次')
                 else:
