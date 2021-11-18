@@ -88,6 +88,7 @@ class test_DATA(unittest.TestCase):
                 self.driver.find_element_by_id("com.igpsport.globalapp:id/tvDelete").click()
                 time.sleep(5)
                 self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
+                time.sleep(1)
 
         except:
             pass
