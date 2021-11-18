@@ -78,6 +78,20 @@ class test_DATA(unittest.TestCase):
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tvDelete").click()
         time.sleep(5)
         self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
+        try:
+            id_name = self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").text
+            if id_name:
+                print("重新尝试删除")
+                self.driver.find_element_by_xpath(
+                    "//android.widget.ImageView[@resource-id='com.igpsport.globalapp:id/ivMenu']").click()
+                time.sleep(3)
+                self.driver.find_element_by_id("com.igpsport.globalapp:id/tvDelete").click()
+                time.sleep(5)
+                self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
+
+
+        except:
+            pass
         time.sleep(8)
         self.swipe_down()
         time.sleep(3)
