@@ -71,10 +71,10 @@ class test_DATA(unittest.TestCase):
                         print("重试失败")
         except:
             pass
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath(
             "//android.widget.ImageView[@resource-id='com.igpsport.globalapp:id/ivMenu']").click()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.find_element_by_id("com.igpsport.globalapp:id/tvDelete").click()
         time.sleep(5)
         self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
