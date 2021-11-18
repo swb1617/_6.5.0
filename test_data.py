@@ -89,7 +89,6 @@ class test_DATA(unittest.TestCase):
                 time.sleep(5)
                 self.driver.find_element_by_id("com.igpsport.globalapp:id/md_button_positive").click()
 
-
         except:
             pass
         time.sleep(8)
