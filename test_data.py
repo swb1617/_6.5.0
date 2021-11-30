@@ -3,6 +3,7 @@ user:石文斌
 time：2021/11/15
 equipment：IGS50S
 """
+# coding=utf-8
 import os
 import time
 import unittest
@@ -21,8 +22,8 @@ class test_DATA(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:  # 执行测试类前准备工作
-        os.system('start startAppiumServer.bat')  # 启动appium服务
-        time.sleep(8)  # 等待appium服务启动完毕
+        # os.system('start startAppiumServer.bat')  # 启动appium服务
+        # time.sleep(8)  # 等待appium服务启动完毕
 
         desired_caps = {
             'platformName': 'Android',
@@ -39,10 +40,10 @@ class test_DATA(unittest.TestCase):
         }
         cls.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-    @classmethod
-    def tearDownClass(cls) -> None:  # 执行测试类后工作
-        os.system('start stopAppiumServer.bat')  # 关闭appium服务
-        time.sleep(10)
+    # @classmethod
+    # def tearDownClass(cls) -> None:  # 执行测试类后工作
+    #     os.system('start stopAppiumServer.bat')  # 关闭appium服务
+    #     time.sleep(10)
 
     def swipe_down(self):  # 定义下滑动方法
         size = self.driver.get_window_size()  # 获取手机屏幕尺寸
@@ -66,7 +67,7 @@ class test_DATA(unittest.TestCase):
                     self.driver.find_element_by_id("android:id/button1").click()  # retry操作
                     time.sleep(40)  # 上传时间
                     self.driver.find_element_by_id("com.igpsport.globalapp:id/tv_activity_name").click()
-                    print('重试', k+1, '次')
+                    print('重试', k + 1, '次')
                 else:
                     break
         except:
