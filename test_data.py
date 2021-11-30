@@ -4,7 +4,6 @@ time：2021/11/15
 equipment：IGS50S
 """
 # coding=utf-8
-import os
 import time
 import unittest
 
@@ -72,7 +71,7 @@ class test_DATA(unittest.TestCase):
                     break
         except:
             pass
-        time.sleep(2)
+        time.sleep(5)
         self.driver.find_element_by_xpath(
             "//android.widget.ImageView[@resource-id='com.igpsport.globalapp:id/ivMenu']").click()
         time.sleep(3)
